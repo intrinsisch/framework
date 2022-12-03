@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "dev": "sass src/index.scss dist/index.css --watch",
+    "build": "sass src/index.scss dist/index.css --style=compressed"
+  },
+  "devDependencies": {
+    "sass": "^1.56.1"
+  }
+}
