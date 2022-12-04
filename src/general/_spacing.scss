@@ -1,0 +1,9 @@
+@use "../config/spacing-definitions" as def;
+
+@layer framework.globals {
+  :root {
+    @each $size, $value in def.$spacing-map {
+      --#{def.$prefix}-#{$size}: #{$value};
+    }
+  }
+}

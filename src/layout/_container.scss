@@ -1,0 +1,23 @@
+@use "../utils/spacing-utils.scss" as s;
+
+$container-max-width__sm: 30rem !default;
+$container-max-width__md: 40rem !default;
+$container-max-width__lg: 50rem !default;
+
+@layer framework.layout {
+  .container {
+    padding-inline: max(
+      var(--container__padding-inline, #{s.get-spacing(5)}),
+      (100vw - var(--container__max-width, 100vw))/2
+    );
+    &__sm {
+      --container__max-width: #{$container-max-width__sm};
+    }
+    &__md {
+      --container__max-width: #{$container-max-width__md};
+    }
+    &__lg {
+      --container__max-width: #{$container-max-width__lg};
+    }
+  }
+}

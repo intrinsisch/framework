@@ -1,0 +1,38 @@
+/**
+ * Framework defaults
+ */
+
+$_0: 0;
+$_1: 0.25rem;
+$_2: 0.5rem;
+$_3: 0.75rem;
+$_4: 1rem;
+$_5: 1.5rem;
+$_6: 3rem;
+
+/**
+ * Overridable defaults
+ */
+
+$spacing-0: $_0 !default;
+$spacing-1: $_1 !default;
+$spacing-2: $_2 !default;
+$spacing-3: $_3 !default;
+$spacing-4: $_4 !default;
+$spacing-5: $_5 !default;
+$spacing-6: $_6 !default;
+
+/**
+ * Helpers
+ */
+
+$prefix: "sp";
+$spacing-map: (
+  0: $spacing-0,
+  1: $spacing-1,
+  2: $spacing-2,
+  3: $spacing-3,
+  4: $spacing-4,
+  5: $spacing-5,
+  6: $spacing-6,
+);

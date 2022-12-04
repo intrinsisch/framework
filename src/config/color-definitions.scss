@@ -111,6 +111,10 @@ $color-dark-border: $_mauve-dark6 !default; // 6
 $color-dark-text: $_mauve-dark12 !default; // 12
 $color-dark-text-hover: $_mauve-dark12 !default; // 12
 
+/**
+ * Helpers
+ */
+
 $prefix: "clr";
 $color-map: (
   primary: (

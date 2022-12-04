@@ -1,7 +1,7 @@
-@use "../config/color-definitions" as cd;
+@use "../config/color-definitions" as def;
 
 @function get-color($variant, $type) {
-  @return var(--#{cd.$prefix}-#{$variant}__#{$type});
+  @return var(--#{def.$prefix}-#{$variant}__#{$type});
 }
 
 @mixin color-palette($variant) {

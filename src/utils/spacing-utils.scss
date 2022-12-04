@@ -1,0 +1,5 @@
+@use "../config/spacing-definitions" as def;
+
+@function get-spacing($variant) {
+  @return var(--#{def.$prefix}-#{$variant});
+}
