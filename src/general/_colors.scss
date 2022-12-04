@@ -4,7 +4,7 @@
   :root {
     @each $variant, $values in cd.$color-map {
       @each $type, $value in $values {
-        --#{cd.$prefix}-#{$variant}-#{$type}: #{$value};
+        --#{cd.$prefix}-#{$variant}__#{$type}: #{$value};
       }
     }
   }

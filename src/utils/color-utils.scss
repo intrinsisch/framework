@@ -1,0 +1,10 @@
+@use "../config/color-definitions" as cd;
+
+@function get-color($variant, $type) {
+  @return "var(--#{cd.$prefix}-#{$variant}__#{$type})";
+}
+
+@mixin color-palette($variant) {
+  color: get-color($variant, "text");
+  background-color: get-color($variant, "component");
+}
