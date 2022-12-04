@@ -1,0 +1,8 @@
+@layer framework.layout {
+  .stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: var(--stack-gap, 1.5rem);
+  }
+}
