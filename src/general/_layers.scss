@@ -1,1 +1,3 @@
-@layer reset, globals;
+@layer framework {
+  @layer reset, globals;
+}

@@ -1,6 +1,6 @@
 @use "../config/color-definitions" as cd;
 
-@layer globals {
+@layer framework.globals {
   :root {
     @each $variant, $values in cd.$color-map {
       @each $type, $value in $values {
