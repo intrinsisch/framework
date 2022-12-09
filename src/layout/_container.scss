@@ -1,9 +1,11 @@
 @use "../general/spacing/" as spa;
 @use "../general/layers/" as lay;
 
-$container-max-width__sm: 30rem !default;
-$container-max-width__md: 45rem !default;
-$container-max-width__lg: 60rem !default;
+$container-map:(
+  sm: 30rem,
+  md: 45rem,
+  lg: 60rem,
+)!default;
 
 @include lay.use-framework-layer(layout) {
   .container {
@@ -12,14 +14,10 @@ $container-max-width__lg: 60rem !default;
       var(--container-spacing),
       (100vw - var(--container__max-width, 100vw))/2
     );
-    &__sm {
-      --container__max-width: #{$container-max-width__sm};
-    }
-    &__md {
-      --container__max-width: #{$container-max-width__md};
-    }
-    &__lg {
-      --container__max-width: #{$container-max-width__lg};
+    @each $size, $value in $container-map {
+      &:where(.#{$size}) {
+        --container__max-width: #{$value};
+      }
     }
   }
 }
