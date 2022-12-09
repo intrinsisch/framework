@@ -1,10 +1,11 @@
 @use "../utils/spacing-utils.scss" as s;
+@use "../general/layers/" as lay;
 
 $container-max-width__sm: 30rem !default;
 $container-max-width__md: 45rem !default;
 $container-max-width__lg: 60rem !default;
 
-@layer framework.layout {
+@include lay.use-framework-layer(layout) {
   .container {
     --container-spacing: var(--spacing, #{s.get-spacing(5)});
     padding-inline: max(

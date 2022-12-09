@@ -1,8 +1,9 @@
 @use "color-definitions" as def;
 @use "color-utils" as utils;
 @forward "color-utils";
+@use "../layers/" as lay;
 
-@layer framework.globals {
+@include lay.use-framework-layer(globals) {
   :root {
     @each $variant, $values in def.$color-map {
       @each $type, $value in $values {

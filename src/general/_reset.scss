@@ -1,4 +1,6 @@
-@layer framework.reset {
+@use "layers/" as lay;
+
+@include lay.use-framework-layer(reset) {
   *,
   *::before,
   *::after {

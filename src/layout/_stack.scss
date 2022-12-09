@@ -1,6 +1,7 @@
 @use "../utils/spacing-utils.scss" as s;
+@use "../general/layers/" as lay;
 
-@layer framework.layout {
+@include lay.use-framework-layer(layout) {
   .stack {
     --stack-spacing: var(--spacing, #{s.get-spacing(5)});
     display: flex;

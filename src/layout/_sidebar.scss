@@ -1,6 +1,7 @@
 @use "../utils/spacing-utils.scss" as s;
+@use "../general/layers/" as lay;
 
-@layer framework.layout {
+@include lay.use-framework-layer(layout) {
   .sidebar-wrapper {
     display: flex;
     flex-wrap: wrap;

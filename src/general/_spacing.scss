@@ -1,7 +1,8 @@
 @use "../config/spacing-definitions" as def;
 @use "../utils/spacing-utils.scss" as s;
+@use "layers/" as lay;
 
-@layer framework.globals {
+@include lay.use-framework-layer(globals) {
   :root {
     @each $size, $value in def.$spacing-map {
       --#{def.$prefix}-#{$size}: #{$value};
