@@ -1,11 +1,11 @@
-@use "../utils/spacing-utils.scss" as s;
+@use "../general/spacing/" as spa;
 @use "../general/layers/" as lay;
 
 @include lay.use-framework-layer(layout) {
   .sidebar-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--sidebar-gap, var(--spacing, #{s.get-spacing(5)}));
+    gap: var(--sidebar-gap, var(--spacing, #{spa.get-spacing(5)}));
 
     > .sidebar {
       flex-grow: 1;

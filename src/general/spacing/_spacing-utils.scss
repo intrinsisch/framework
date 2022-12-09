@@ -1,0 +1,10 @@
+@use "../globals";
+@use "spacing-definitions" as def;
+
+@function get-spacing-var-name($variant) {
+  @return --#{globals.$prefix}#{globals.$separator1}#{def.$prefix}#{globals.$separator1}#{$variant};
+}
+
+@function get-spacing($variant) {
+  @return var(#{get-spacing-var-name($variant)});
+}
