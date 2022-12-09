@@ -2,3 +2,7 @@
 @use "reset";
 @use "colors";
 @use "spacing";
+
+.test {
+  background-color: colors.get-color("primary", "background");
+}

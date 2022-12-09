@@ -1,0 +1,68 @@
+@use "vendor/radix-colors.scss" as rdx;
+
+/**
+ * Semantic colors, overridable
+ */
+
+$color-primary: (
+  background: rdx.$pink02,
+  component: rdx.$pink03,
+  component-hover: rdx.$pink04,
+  component-active: rdx.$pink05,
+  border: rdx.$pink06,
+  text: rdx.$pink12,
+  text-hover: rdx.$pink12,
+) !default;
+
+$color-secondary: (
+  background: rdx.$teal02,
+  component: rdx.$teal03,
+  component-hover: rdx.$teal04,
+  component-active: rdx.$teal05,
+  border: rdx.$teal06,
+  text: rdx.$teal12,
+  text-hover: rdx.$teal12,
+) !default;
+
+$color-accent: (
+  background: rdx.$blue02,
+  component: rdx.$blue03,
+  component-hover: rdx.$blue04,
+  component-active: rdx.$blue05,
+  border: rdx.$blue06,
+  text: rdx.$blue12,
+  text-hover: rdx.$blue12,
+) !default;
+
+$color-light: (
+  background: rdx.$mauve02,
+  component: rdx.$mauve03,
+  component-hover: rdx.$mauve04,
+  component-active: rdx.$mauve05,
+  border: rdx.$mauve06,
+  text: rdx.$mauve12,
+  text-hover: rdx.$mauve12,
+) !default;
+
+$color-dark: (
+  background: rdx.$mauveDark02,
+  component: rdx.$mauveDark03,
+  component-hover: rdx.$mauveDark04,
+  component-active: rdx.$mauveDark05,
+  border: rdx.$mauveDark06,
+  text: rdx.$mauveDark12,
+  text-hover: rdx.$mauveDark12,
+) !default;
+
+/**
+ * Helpers
+ */
+
+$prefix: "clr";
+$color-map: (
+  primary: $color-primary,
+  secondary: $color-secondary,
+  accent: $color-accent,
+  light: $color-light,
+  dark: $color-dark,
+);

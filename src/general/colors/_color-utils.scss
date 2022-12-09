@@ -1,0 +1,15 @@
+@use "../globals";
+@use "color-definitions" as def;
+
+@function get-color-var-name($variant, $type) {
+  @return --#{globals.$prefix}#{globals.$separator1}#{def.$prefix}#{globals.$separator1}#{$variant}#{globals.$separator2}#{$type};
+}
+
+@function get-color($variant, $type) {
+  @return var(#{get-color-var-name($variant, $type)});
+}
+
+@mixin color-palette($variant) {
+  color: get-color($variant, "text");
+  background-color: get-color($variant, "component");
+}
