@@ -21,15 +21,15 @@ $_type-props: map.get(def.$vars, "type-props");
   @return var(#{map.get($_type-props, $type)});
 }
 
-@mixin color-palette($variant, $extended: false) {
-  @if $extended {
-    @each $type, $value in $_type-props {
-      #{$value}: get-color($variant, $type);
-    }
-  } @else {
-    #{map.get($_type-props, "text")}: get-color($variant, "text");
-    #{map.get($_type-props, "component")}: get-color($variant, "component");
+@mixin load-color-palette($variant) {
+  @each $type, $value in $_type-props {
+    #{$value}: get-color($variant, $type);
   }
+}
+
+@mixin apply-color-palette($variant) {
+  #{map.get($_type-props, "text")}: get-color($variant, "text");
+  #{map.get($_type-props, "component")}: get-color($variant, "component");
   color: get-color-local("text");
   background-color: get-color-local("component");
 }
