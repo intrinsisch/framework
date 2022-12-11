@@ -1,8 +1,8 @@
-@use "../globals";
+@use "../../utils/custom-properties" as cp;
 @use "color-definitions" as def;
 
 @function get-color-var-name($variant, $type) {
-  @return --#{globals.$prefix}#{globals.$separator1}#{def.$prefix}#{globals.$separator1}#{$variant}#{globals.$separator2}#{$type};
+  @return cp.create-property($prefix: def.$prefix, $component: $variant, $variant: $type, $global: true);
 }
 
 @function get-color($variant, $type) {

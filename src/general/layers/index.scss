@@ -1,5 +1,3 @@
-@use "layer-defintions" as def;
-@use "layer-utils" as utils;
+@forward "layer-defintions";
 @forward "layer-utils";
-
-@include utils.init-framework-layers(def.$layers);
+@use "layer-globals";

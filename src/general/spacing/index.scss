@@ -1,18 +1,3 @@
-@use "spacing-definitions" as def;
-@use "spacing-utils" as utils;
+@forward "spacing-definitions";
 @forward "spacing-utils";
-@use "../layers/" as lay;
-
-@include lay.use-framework-layer(globals) {
-  :root {
-    @each $size, $value in def.$spacing-map {
-      #{#{utils.get-spacing-var-name($size)}}: #{$value};
-    }
-  }
-
-  @each $size, $value in def.$spacing-map {
-    .#{def.$prefix}-#{$size} {
-      --spacing: #{utils.get-spacing($size)};
-    }
-  }
-}
+@use "spacing-globals";

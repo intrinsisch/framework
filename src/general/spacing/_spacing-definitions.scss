@@ -1,3 +1,5 @@
+@use "../../utils/custom-properties" as cp;
+
 /**
  * Overridable defaults
  */
@@ -14,7 +16,7 @@ $spacing-6: 3rem !default;
  * Helpers
  */
 
-$prefix: "spa";
+$spacing-prefix: "spa";
 $spacing-map: (
   0: $spacing-0,
   1: $spacing-1,
@@ -23,4 +25,7 @@ $spacing-map: (
   4: $spacing-4,
   5: $spacing-5,
   6: $spacing-6,
+);
+$spacing-vars: (
+  spacing: cp.create-property($spacing-prefix, "spacing"),
 );

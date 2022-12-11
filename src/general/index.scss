@@ -1,4 +1,4 @@
-@use "layers";
 @use "reset";
-@use "colors";
-@use "spacing";
+@forward "layers";
+@forward "colors";
+@forward "spacing";

@@ -1,0 +1,11 @@
+@use "sass:map";
+@use "../general/" as g;
+@use "../utils/custom-properties" as cp;
+
+$_var-spacing: map.get(g.$spacing-vars, "spacing");
+
+@include g.use-framework-layer(layout) {
+  .flow > * + * {
+    margin-top: var(#{$_var-spacing}, #{g.get-spacing(5)});
+  }
+}

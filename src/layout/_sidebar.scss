@@ -1,15 +1,19 @@
-@use "../general/spacing/" as spa;
-@use "../general/layers/" as lay;
+@use "sass:map";
+@use "../general/" as g;
+@use "../utils/custom-properties" as cp;
 
-@include lay.use-framework-layer(layout) {
+$_var-spacing: map.get(g.$spacing-vars, "spacing");
+$_var-sbr-basis: cp.create-property("sbr", "basis");
+
+@include g.use-framework-layer(layout) {
   .sidebar-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--sidebar-gap, var(--spacing, #{spa.get-spacing(5)}));
+    gap: var(#{$_var-spacing}, #{g.get-spacing(5)});
 
     > .sidebar {
       flex-grow: 1;
-      flex-basis: var(--sidebar-basis, fit-content);
+      flex-basis: var(#{$_var-sbr-basis}, fit-content);
     }
 
     > :not(.sidebar) {
