@@ -2,6 +2,8 @@
 @use "../../utils/" as u;
 @use "color-definitions" as def;
 
+$_type-props: map.get(def.$vars, "type-props");
+
 @function get-color-var-name($variant, $type) {
   @return u.create-property(
     $prefix: def.$prefix,
@@ -15,15 +17,19 @@
   @return var(#{get-color-var-name($variant, $type)});
 }
 
+@function get-color-local($type) {
+  @return var(#{map.get($_type-props, $type)});
+}
+
 @mixin color-palette($variant, $extended: false) {
   @if $extended {
-    @each $type, $value in def.$vars {
+    @each $type, $value in $_type-props {
       #{$value}: get-color($variant, $type);
     }
   } @else {
-    #{map.get(def.$vars, "text")}: get-color($variant, "text");
-    #{map.get(def.$vars, "component")}: get-color($variant, "component");
+    #{map.get($_type-props, "text")}: get-color($variant, "text");
+    #{map.get($_type-props, "component")}: get-color($variant, "component");
   }
-  color: var(#{map.get(def.$vars, "text")});
-  background-color: var(#{map.get(def.$vars, "component")});
+  color: get-color-local("text");
+  background-color: get-color-local("component");
 }

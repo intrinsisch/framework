@@ -101,11 +101,13 @@ $map: (
   neutral-dark: $color-neutral-dark,
 );
 $vars: (
-  background: u.create-property($prefix, "background"),
-  component: u.create-property($prefix, "component"),
-  component-hover: u.create-property($prefix, "component-hover"),
-  component-active: u.create-property($prefix, "component-active"),
-  border: u.create-property($prefix, "border"),
-  text: u.create-property($prefix, "text"),
-  text-hover: u.create-property($prefix, "text-hover"),
+  type-props: (
+    background: u.create-property($prefix, "background"),
+    component: u.create-property($prefix, "component"),
+    component-hover: u.create-property($prefix, "component-hover"),
+    component-active: u.create-property($prefix, "component-active"),
+    border: u.create-property($prefix, "border"),
+    text: u.create-property($prefix, "text"),
+    text-hover: u.create-property($prefix, "text-hover"),
+  ),
 );
