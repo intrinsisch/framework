@@ -3,17 +3,17 @@
 @use "spacing-utils" as utils;
 @use "../layers/" as lay;
 
-$_var-spacing: map.get(def.$spacing-vars, "spacing");
+$_var-spacing: map.get(def.$vars, "spacing");
 
 @include lay.use-framework-layer(globals) {
   :root {
-    @each $size, $value in def.$spacing-map {
+    @each $size, $value in def.$map {
       #{#{utils.get-spacing-var-name($size)}}: #{$value};
     }
   }
 
-  @each $size, $value in def.$spacing-map {
-    .#{def.$spacing-prefix}-#{$size} {
+  @each $size, $value in def.$map {
+    .#{def.$prefix}-#{$size} {
       #{$_var-spacing}: #{utils.get-spacing($size)};
     }
   }

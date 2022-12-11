@@ -1,4 +1,5 @@
 @use "vendor/radix-colors" as rdx;
+@use "../../utils/" as u;
 
 /**
  * Semantic colors, overridable
@@ -89,7 +90,7 @@ $color-neutral-dark: (
  */
 
 $prefix: clr;
-$color-map: (
+$map: (
   primary: $color-primary,
   primary-dark: $color-primary-dark,
   secondary: $color-secondary,
@@ -98,4 +99,13 @@ $color-map: (
   accent-dark: $color-accent-dark,
   neutral: $color-neutral,
   neutral-dark: $color-neutral-dark,
+);
+$vars: (
+  background: u.create-property($prefix, "background"),
+  component: u.create-property($prefix, "component"),
+  component-hover: u.create-property($prefix, "component-hover"),
+  component-active: u.create-property($prefix, "component-active"),
+  border: u.create-property($prefix, "border"),
+  text: u.create-property($prefix, "text"),
+  text-hover: u.create-property($prefix, "text-hover"),
 );

@@ -1,15 +1,29 @@
-@use "../../utils/custom-properties" as cp;
+@use "sass:map";
+@use "../../utils/" as u;
 @use "color-definitions" as def;
 
 @function get-color-var-name($variant, $type) {
-  @return cp.create-property($prefix: def.$prefix, $component: $variant, $variant: $type, $global: true);
+  @return u.create-property(
+    $prefix: def.$prefix,
+    $component: $variant,
+    $variant: $type,
+    $global: true
+  );
 }
 
 @function get-color($variant, $type) {
   @return var(#{get-color-var-name($variant, $type)});
 }
 
-@mixin color-palette($variant) {
-  color: get-color($variant, "text");
-  background-color: get-color($variant, "component");
+@mixin color-palette($variant, $extended: false) {
+  @if $extended {
+    @each $type, $value in def.$vars {
+      #{$value}: get-color($variant, $type);
+    }
+  } @else {
+    #{map.get(def.$vars, "text")}: get-color($variant, "text");
+    #{map.get(def.$vars, "component")}: get-color($variant, "component");
+  }
+  color: var(#{map.get(def.$vars, "text")});
+  background-color: var(#{map.get(def.$vars, "component")});
 }

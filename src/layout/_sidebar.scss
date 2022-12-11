@@ -1,9 +1,9 @@
 @use "sass:map";
 @use "../general/" as g;
-@use "../utils/custom-properties" as cp;
+@use "../utils/" as u;
 
 $_var-spacing: map.get(g.$spacing-vars, "spacing");
-$_var-sbr-basis: cp.create-property("sbr", "basis");
+$_var-sbr-basis: u.create-property("sbr", "basis");
 
 @include g.use-framework-layer(layout) {
   .sidebar-wrapper {

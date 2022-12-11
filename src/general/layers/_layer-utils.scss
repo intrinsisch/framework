@@ -8,7 +8,7 @@
 }
 
 @mixin use-framework-layer($layer) {
-  @if list.index(def.$layers, $layer) == null {
+  @if list.index(def.$list, $layer) == null {
     @error "Framework layer '" + $layer + "' does not exist. Use one of '" + def.$layers + "'";
   }
   @layer #{def.$framework-namespace}.#{$layer} {

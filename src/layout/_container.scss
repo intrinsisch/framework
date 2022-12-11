@@ -1,5 +1,5 @@
 @use "../general/" as g;
-@use "../utils/custom-properties" as cp;
+@use "../utils/" as u;
 
 $container-map: (
   sm: 30rem,
@@ -7,8 +7,8 @@ $container-map: (
   lg: 60rem,
 ) !default;
 
-$_var-con-spacing: cp.create-property("con", "spacing");
-$_var-con-max-width: cp.create-property("con", "max-width");
+$_var-con-spacing: u.create-property("con", "spacing");
+$_var-con-max-width: u.create-property("con", "max-width");
 
 @include g.use-framework-layer(layout) {
   .container {

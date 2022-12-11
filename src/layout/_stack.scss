@@ -1,6 +1,5 @@
 @use "sass:map";
 @use "../general/" as g;
-@use "../utils/custom-properties" as cp;
 
 $_var-spacing: map.get(g.$spacing-vars, "spacing");
 

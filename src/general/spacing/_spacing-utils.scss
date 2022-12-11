@@ -1,9 +1,9 @@
-@use "../../utils/custom-properties" as cp;
+@use "../../utils/" as u;
 @use "../globals";
 @use "spacing-definitions" as def;
 
 @function get-spacing-var-name($variant) {
-  @return cp.create-property($prefix: def.$spacing-prefix, $component: $variant, $global: true);
+  @return u.create-property($prefix: def.$prefix, $component: $variant, $global: true);
 }
 
 @function get-spacing($variant) {
